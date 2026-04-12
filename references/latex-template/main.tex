@@ -1,0 +1,128 @@
+% ============================================================
+% main.tex - 数学建模竞赛论文主文件
+% 编译方式: latexmk -xelatex main.tex
+% 或在 TeXStudio 中设置编译器为 XeLaTeX
+% ============================================================
+\documentclass[12pt,a4paper]{ctexart}
+
+% ---- 页面设置 ----
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% ---- 数学 ----
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+% ---- 图表 ----
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{booktabs}       % 三线表
+\usepackage{longtable}      % 跨页表格
+\usepackage{multirow}
+\usepackage{array}
+
+% ---- 代码 ----
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  language=Python,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{red!70!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=8pt,
+  frame=single,
+  breaklines=true,
+  breakatwhitespace=false,
+  tabsize=4,
+  showstringspaces=false,
+  captionpos=b,
+  xleftmargin=2em,
+  xrightmargin=1em,
+}
+
+% ---- 引用与链接 ----
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue!70!black,
+  urlcolor=blue!70!black,
+  pdfstartview=FitH,
+}
+
+% ---- 页眉页脚 ----
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small 数学建模竞赛论文}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---- 标题编号格式 ----
+\ctexset{
+  section/format = \Large\bfseries\heiti,
+  subsection/format = \large\bfseries\heiti,
+  subsubsection/format = \normalsize\bfseries\heiti,
+}
+
+% ---- 公式编号按章节 ----
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% ---- 图表路径 ----
+\graphicspath{{figures/}}
+
+% ---- 自定义命令 ----
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+
+% ============================================================
+\begin{document}
+
+% ---- 标题页 ----
+\begin{center}
+  {\LARGE\bfseries\heiti 论文标题}\\[1em]
+  % 根据竞赛要求可在此添加队号等信息
+\end{center}
+
+% ---- 摘要 ----
+\input{abstract.tex}
+
+% ---- 目录（按竞赛要求决定是否保留） ----
+% 如要求去除目录，注释掉下面两行
+\newpage
+\tableofcontents
+\newpage
+
+% ---- 正文 ----
+\input{problem_restatement.tex}
+\input{problem_analysis.tex}
+\input{assumptions.tex}
+\input{symbols.tex}
+
+% ---- 各问独立章节 ----
+\input{question1.tex}
+\input{question2.tex}
+% \input{question3.tex}    % 按实际题目数量取消注释
+% \input{question4.tex}
+
+% ---- 评价与推广 ----
+\input{evaluation.tex}
+
+% ---- 参考文献 ----
+\newpage
+\bibliographystyle{plain}
+\bibliography{references}
+
+% ---- 附录 ----
+\newpage
+\input{appendix.tex}
+
+\end{document}

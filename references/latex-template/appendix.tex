@@ -1,0 +1,56 @@
+% ============================================================
+% appendix.tex - 附录
+% ============================================================
+
+\appendix
+\section*{附录}
+\addcontentsline{toc}{section}{附录}
+
+% ==============================
+\subsection*{A. 源代码}
+% ==============================
+
+% 代码完整原版粘贴，使用 lstlisting 格式。
+% 按问题编号分节。
+
+\subsubsection*{A.1 问题一求解代码}
+
+\begin{lstlisting}[language=Python, caption={问题一求解代码 (question1\_solve.py)}]
+# -*- coding: utf-8 -*-
+"""
+问题一求解代码
+"""
+import numpy as np
+# ... 完整代码粘贴于此 ...
+\end{lstlisting}
+
+\subsubsection*{A.2 问题二求解代码}
+
+\begin{lstlisting}[language=Python, caption={问题二求解代码 (question2\_solve.py)}]
+# ... 完整代码粘贴于此 ...
+\end{lstlisting}
+
+% ==============================
+\subsection*{B. 运行数据与补充表格}
+% ==============================
+
+% 正文中未展示的详细数据表格、中间计算结果等。
+% 使用 longtable 处理大表格。
+
+\begin{longtable}{cccc}
+  \caption{补充数据表} \\
+  \toprule
+  \textbf{序号} & \textbf{数据1} & \textbf{数据2} & \textbf{数据3} \\
+  \midrule
+  \endfirsthead
+  \caption{补充数据表（续）} \\
+  \toprule
+  \textbf{序号} & \textbf{数据1} & \textbf{数据2} & \textbf{数据3} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+
+  1 & -- & -- & -- \\
+  % ...
+\end{longtable}

@@ -1,0 +1,114 @@
+% ============================================================
+% question1.tex - 问题一的模型建立与求解
+% 每一问使用相同结构，复制此文件为 question2.tex 等
+% ============================================================
+
+\section{问题一的模型建立与求解}
+
+% ==============================
+\subsection{方法对比与选择}
+% ==============================
+
+% 列出至少 2 种可行方法，用对比表展示优劣，
+% 正文中对每种方法简要描述原理（各 100-200 字），
+% 最后明确说明选择理由。
+
+针对问题一，本文考虑了以下候选方法：
+
+\begin{table}[H]
+  \centering
+  \caption{问题一候选方法对比}
+  \begin{tabular}{lcccc}
+    \toprule
+    \textbf{方法} & \textbf{适用性} & \textbf{精度} & \textbf{效率} & \textbf{可解释性} \\
+    \midrule
+    方法A & 高 & 高 & 中 & 高 \\
+    方法B & 中 & 高 & 高 & 低 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+（对每种方法的简要描述...）
+
+综合考虑适用性和可解释性，本文选择方法A求解问题一。
+
+% ==============================
+\subsection{模型建立}
+% ==============================
+
+% 目标函数、约束条件、完整数学表达。
+
+\subsubsection{决策变量}
+
+（变量定义）
+
+\subsubsection{目标函数}
+
+\begin{equation}
+  \min Z = \sum_{i=1}^{n} c_i x_i
+  \label{eq:q1_obj}
+\end{equation}
+
+\subsubsection{约束条件}
+
+\begin{equation}
+  \text{s.t.} \quad
+  \begin{cases}
+    \sum_{i=1}^{n} a_{ij} x_i \leq b_j, & j = 1, 2, \ldots, m \\
+    x_i \geq 0, & i = 1, 2, \ldots, n
+  \end{cases}
+  \label{eq:q1_cons}
+\end{equation}
+
+% ==============================
+\subsection{求解过程}
+% ==============================
+
+% 算法步骤、参数设置、收敛条件。
+
+（求解算法描述、参数设置说明）
+
+% ==============================
+\subsection{结果与分析}
+% ==============================
+
+% 表格：原始计算数据 / 结果对比
+\begin{table}[H]
+  \centering
+  \caption{问题一求解结果}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{指标} & \textbf{数值} & \textbf{单位} \\
+    \midrule
+    目标函数值 & 1256.3 & 万元 \\
+    求解时间   & 2.4    & 秒 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+% 图：至少 4 张，每张至少 100 字分析
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{q1_fig1.pdf}
+  \caption{问题一结果分析图1}
+  \label{fig:q1_1}
+\end{figure}
+
+如图~\ref{fig:q1_1}所示，（至少100字的详细分析...）
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{q1_fig2.pdf}
+  \caption{问题一结果分析图2}
+  \label{fig:q1_2}
+\end{figure}
+
+如图~\ref{fig:q1_2}所示，（至少100字的详细分析...）
+
+% 按需添加更多图（每问至少 4 张）
+
+% ---- 灵敏度/稳定性分析 ----
+\subsubsection{灵敏度分析}
+
+（对关键参数的灵敏度分析结果）
