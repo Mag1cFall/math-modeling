@@ -66,6 +66,7 @@
 
 % ---- 页眉页脚 ----
 \usepackage{fancyhdr}
+\setlength{\headheight}{15pt}  % linespread 1.5 后默认 12pt 不足，需要加大否则 fancyhdr 警告
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[C]{\small 数学建模竞赛论文}
@@ -85,7 +86,10 @@
 \numberwithin{table}{section}
 
 % ---- 图表路径 ----
-\graphicspath{{figures/}}
+% 兼容两种布局：
+%   1. 代码直接输出到 output/figures/（推荐，见 SKILL.md §2.2）
+%   2. 传统做法：把图复制到 paper/figures/
+\graphicspath{{../output/figures/}{./figures/}}
 
 % ---- 孤行/寡妇行控制（避免章节标题孤悬页底） ----
 \widowpenalty=10000

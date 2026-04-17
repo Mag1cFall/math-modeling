@@ -107,7 +107,7 @@ paper/
 ```latex
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\textwidth]{q1_fig1.pdf}
+  \includegraphics[width=0.8\textwidth]{q1_fig1.png}
   \caption{收敛曲线对比}
   \label{fig:q1_convergence}
 \end{figure}
@@ -120,14 +120,14 @@ paper/
   \centering
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{q1_fig3.pdf}
+    \includegraphics[width=\linewidth]{q1_fig3.png}
     \caption{灵敏度分析}
     \label{fig:q1_sensitivity}
   \end{subfigure}
   \hfill
   \begin{subfigure}[b]{0.48\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{q1_fig4.pdf}
+    \includegraphics[width=\linewidth]{q1_fig4.png}
     \caption{稳定性测试}
     \label{fig:q1_stability}
   \end{subfigure}
@@ -142,12 +142,12 @@ paper/
 
 ### 图片规范
 
-- 格式优先 PDF（矢量），其次 300dpi PNG
-- 命名：`q{问题号}_fig{序号}.pdf`
+- **统一使用 PNG**（300 dpi），从 `output/figures/` 引入
+- 命名：`q{问题号}_fig{序号}.png`
 - **默认使用 `[htbp]` 而不是 `[H]`**：允许 LaTeX 自主浮动，否则容易造成上一页大片空白（见文末「浮动体与空白页避坑」）
 - 引用：`如图~\ref{fig:q1_convergence}所示`
 - 图题在图下方（LaTeX 默认行为，不需要额外处理）
-- 一般正文图 `width` 取 `0.75\textwidth ~ 0.85\textwidth`，子图取 `0.48\textwidth`
+- 正文图 `width` 按内容宽窄自行选择（常见区间 `0.6\textwidth ~ 0.85\textwidth`），子图常取 `0.48\textwidth`
 
 ---
 
@@ -332,7 +332,7 @@ import numpy as np
 ```latex
 \begin{figure}[p]
   \centering
-  \includegraphics[width=\textwidth]{big_figure.pdf}
+  \includegraphics[width=\textwidth]{big_figure.png}
   \caption{...}
 \end{figure}
 ```
