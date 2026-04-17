@@ -26,8 +26,8 @@
 
 依次读取并在报告开头列出每个文件的字数 / 页数 / 行数等定量指标：
 
-1. 比赛规则文档（`规则摘要.md` 或 `规则原文.md`）—— 页数上限、字号、摘要长度、
-   参考文献格式、是否需要目录、附录政策
+1. 比赛规则文档（`规则原文.md`，若用户未提供则按国赛默认）—— 页数上限、字号、
+   摘要长度、参考文献格式、是否需要目录、附录政策
 2. 题目原文 markdown（`X题.md`）—— 每一问的具体要求逐条列出
 3. 论文 LaTeX 源码：`paper/main.tex`、`paper/abstract.tex`、`paper/question1.tex`
    ~ `paper/questionN.tex`、`paper/appendix.tex` 等所有子文件
@@ -189,7 +189,6 @@
 4. 代码输出 `output/q{n}/`—— 逐目录读取：
    - `q{n}_*.csv` 文件列表 + 每个 CSV 的列名 + 行数
    - `q{n}_log.txt`—— 是否存在 ERROR / WARNING / NaN / Inf
-   - `q{n}_summary.json`（若存在）—— 关键数值指标
    - `figures/` 下图片数量 + 每张图的 dpi（从文件名或 PNG 元数据）
 5. `README.md`—— 复现说明是否完整
 
