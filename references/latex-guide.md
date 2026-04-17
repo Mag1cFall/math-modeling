@@ -43,8 +43,13 @@ paper/
 ├── evaluation.tex           # 评价与推广
 ├── references.bib           # 参考文献库
 ├── appendix.tex             # 附录（代码 + 数据）
-└── figures/                 # 图片目录
+└── figures/                 # 图片目录（可选；见下方说明）
 ```
+
+**图片目录的两种布局**（`main.tex` 已用 `\graphicspath{{../output/figures/}{./figures/}}` 兼容两者）：
+
+1. **推荐**：代码直接输出到 `project/output/figures/`（见 SKILL.md §2.2），`paper/` 不需要自己的 `figures/`
+2. **传统**：把图片复制到 `paper/figures/` 下
 
 每个 `.tex` 子文件独立编辑，`main.tex` 通过 `\input{}` 汇总，最终编译出单个 `main.pdf`。
 
@@ -233,7 +238,7 @@ import numpy as np
 2. 把次要数据表格移到附录（用 `longtable`）
 3. 把相邻两张小图合并成 `subcaption` 并排子图
 4. 适当缩小正文图 `width`（从 0.85 降到 0.75）
-5. **绝不要删减图片数量**（每问 ≥ 4 张是硬性要求）
+5. **不要牺牲图片**：数模竞赛评分倾向"图多 + 分析到位"，典型每问 4-8 张，下限 3 张。宁可精简文字也别删必要的图
 
 ---
 
