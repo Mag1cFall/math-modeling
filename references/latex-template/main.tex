@@ -2,11 +2,18 @@
 % main.tex - 数学建模竞赛论文主文件
 % 编译方式: latexmk -xelatex main.tex
 % 或在 TeXStudio 中设置编译器为 XeLaTeX
+%
+% 注意：字号、行距、边距、页眉页脚、参考文献样式等
+%       应按比赛规则文档调整，未提供时默认按国赛惯例。
 % ============================================================
 \documentclass[12pt,a4paper]{ctexart}
 
-% ---- 页面设置 ----
+% ---- 页面设置（以比赛规则为准） ----
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% ---- 行距（以比赛规则为准，国赛一般 1.5 倍） ----
+\usepackage{setspace}
+\linespread{1.5}
 
 % ---- 数学 ----
 \usepackage{amsmath, amssymb, amsthm}
@@ -14,25 +21,28 @@
 
 % ---- 图表 ----
 \usepackage{graphicx}
-\usepackage{float}
-\usepackage{subfigure}
+\usepackage{float}          % 提供 [H] 选项（仅在必须时使用）
+\usepackage{subcaption}     % 子图并排（替代已弃用的 subfigure 宏包）
 \usepackage{booktabs}       % 三线表
 \usepackage{longtable}      % 跨页表格
 \usepackage{multirow}
 \usepackage{array}
+\usepackage{placeins}       % 提供 \FloatBarrier，强制浮动体落位
+\usepackage{caption}
+\captionsetup{font=small, labelfont=bf}
 
 % ---- 代码 ----
 \usepackage{listings}
 \usepackage{xcolor}
 \lstset{
   language=Python,
-  basicstyle=\small\ttfamily,
+  basicstyle=\footnotesize\ttfamily,
   keywordstyle=\color{blue},
   commentstyle=\color{gray},
   stringstyle=\color{red!70!black},
   numbers=left,
   numberstyle=\tiny\color{gray},
-  numbersep=8pt,
+  numbersep=10pt,
   frame=single,
   breaklines=true,
   breakatwhitespace=false,
@@ -69,13 +79,17 @@
   subsubsection/format = \normalsize\bfseries\heiti,
 }
 
-% ---- 公式编号按章节 ----
+% ---- 公式、图、表编号按章节 ----
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
 % ---- 图表路径 ----
 \graphicspath{{figures/}}
+
+% ---- 孤行/寡妇行控制（避免章节标题孤悬页底） ----
+\widowpenalty=10000
+\clubpenalty=10000
 
 % ---- 自定义命令 ----
 \newcommand{\abs}[1]{\left| #1 \right|}
@@ -86,22 +100,40 @@
 % ============================================================
 \begin{document}
 
-% ---- 标题页 ----
-\begin{center}
-  {\LARGE\bfseries\heiti 论文标题}\\[1em]
-  % 根据竞赛要求可在此添加队号等信息
-\end{center}
+% ============================================================
+% 标题页（根据比赛规则调整；部分赛事要求承诺书页作为首页）
+% ============================================================
+\begin{titlepage}
+  \vspace*{3cm}
+  \begin{center}
+    {\LARGE\bfseries\heiti 论文标题}\\[2em]
+    {\large （可选副标题）}\\[4em]
+    % 根据竞赛要求在此填写参赛编号、队伍信息等
+    \begin{tabular}{rl}
+      参赛队号：& \underline{\hspace{6em}} \\[0.5em]
+      所选题目：& \underline{\hspace{6em}} \\
+    \end{tabular}
+  \end{center}
+  \vfill
+\end{titlepage}
 
-% ---- 摘要 ----
+% ============================================================
+% 摘要页（硬性要求：独占一整页，不混入其他内容）
+% ============================================================
 \input{abstract.tex}
+\clearpage
 
-% ---- 目录（按竞赛要求决定是否保留） ----
-% 如要求去除目录，注释掉下面两行
-\newpage
+% ============================================================
+% 目录（按比赛规则决定是否保留）
+% - 国赛通常不要求目录：注释下面两行
+% - 美赛通常要求目录：保留下面两行
+% ============================================================
 \tableofcontents
-\newpage
+\clearpage
 
-% ---- 正文 ----
+% ============================================================
+% 正文
+% ============================================================
 \input{problem_restatement.tex}
 \input{problem_analysis.tex}
 \input{assumptions.tex}
@@ -116,13 +148,17 @@
 % ---- 评价与推广 ----
 \input{evaluation.tex}
 
-% ---- 参考文献 ----
-\newpage
+% ============================================================
+% 参考文献（样式按比赛规则：国赛常用 plain 或 gbt7714，美赛常用 ieeetr）
+% ============================================================
+\clearpage
 \bibliographystyle{plain}
 \bibliography{references}
 
-% ---- 附录 ----
-\newpage
+% ============================================================
+% 附录（不计入正文页数；按问题编号分节）
+% ============================================================
+\clearpage
 \input{appendix.tex}
 
 \end{document}
