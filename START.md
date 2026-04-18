@@ -1,6 +1,6 @@
 解决 C 题，使用数学建模技能
 ULTRAWORK
-所有你的产物放到 D:\杂大三下\CUMCM2025Problems\C题\work\ 下面，
+所有你的产物放到 C:\Users\l\Desktop\MathorCup\C题\Codex 下面，
 每一问对应一个独立的 py 文件（q1.py、q2.py、q3.py ...），
 代码只负责计算、出图、输出结果，不得硬编码任何结论 / 判断 / 预设值；
 所有输出（图片、数据、日志）单独放一个 output 文件夹，结束后清理临时文件。

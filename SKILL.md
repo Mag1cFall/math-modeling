@@ -211,18 +211,17 @@ project/
 ├── q1.py                 问题一：独立可跑
 ├── q2.py                 问题二：独立可跑
 ├── ...                   qN.py
-├── output/
-│   ├── q1/
-│   │   ├── q1_*.csv      问题一数值结果（论文表格从这里摘抄）
-│   │   ├── q1_log.txt    问题一运行日志
-│   │   └── figures/      问题一的图（PNG，300 dpi），命名 q1_fig01_xxx.png
-│   ├── q2/
-│   │   ├── q2_*.csv
-│   │   ├── q2_log.txt
-│   │   └── figures/
-│   └── q3/
-│       └── ...
-└── README.md             复现说明（环境、运行顺序、依赖）
+└── output/
+    ├── q1/
+    │   ├── q1_*.csv      问题一数值结果（论文表格从这里摘抄）
+    │   ├── q1_log.txt    问题一运行日志
+    │   └── figures/      问题一的图（PNG，300 dpi），命名 q1_fig01_xxx.png
+    ├── q2/
+    │   ├── q2_*.csv
+    │   ├── q2_log.txt
+    │   └── figures/
+    └── q3/
+        └── ...
 ```
 
 **反模式**（禁止）：
@@ -262,7 +261,7 @@ project/
 
 ### 阶段二产出
 
-`q1.py ~ qN.py` + `output/q{n}/q{n}_*.csv` + `output/q{n}/q{n}_log.txt` + `output/q{n}/figures/q{n}_fig{k}_*.png` + `README.md`
+`q1.py ~ qN.py` + `output/q{n}/q{n}_*.csv` + `output/q{n}/q{n}_log.txt` + `output/q{n}/figures/q{n}_fig{k}_*.png`
 
 **规则表 / 方案明细等"应当手动打成表格"的数据**：只输出 CSV（如 `q3_rule_table.csv`、`q3_sample_monthly.csv`），**不要画成 matplotlib 文字排版图**（`plot_rule_summary` 这类把表格塞进图里的做法是反模式）。CSV 供论文手渲染成 LaTeX 三线表。
 

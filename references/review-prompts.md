@@ -190,7 +190,6 @@
    - `q{n}_*.csv` 文件列表 + 每个 CSV 的列名 + 行数
    - `q{n}_log.txt`—— 是否存在 ERROR / WARNING / NaN / Inf
    - `figures/` 下图片数量 + 每张图的 dpi（从文件名或 PNG 元数据）
-5. `README.md`—— 复现说明是否完整
 
 ## 第二步：合题性检查（100% 合题 / 完整解答 / 正确）
 
